@@ -77,7 +77,7 @@ export default function ProductCard({ product }) {
         </div>
 
         {/* CTA */}
-        <button className="w-full bg-[#1A1A1A] hover:bg-[#C4702B] text-white text-sm font-medium py-2.5 rounded-lg transition-colors duration-200">
+        <button className="w-full bg-blue-600 hover:bg-blue-700 text-white text-sm font-medium py-2.5 rounded-lg transition-colors duration-200">
           {strings.pdp.add_to_cart_button}
         </button>
       </div>
