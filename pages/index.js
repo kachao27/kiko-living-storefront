@@ -39,7 +39,7 @@ export default function Home() {
             <div className="flex flex-wrap gap-3">
               <Link
                 href="/catalog"
-                className="bg-red-600 text-white font-medium text-sm px-6 py-3 rounded-lg hover:bg-red-700 transition-colors"
+                className="bg-white text-gray-900 font-medium text-sm px-6 py-3 rounded-lg hover:bg-stone-100 transition-colors"
               >
                 {strings.hero.cta_primary}
               </Link>
