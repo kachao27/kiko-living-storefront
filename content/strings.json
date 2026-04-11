@@ -7,19 +7,19 @@
     "cart": "Cart"
   },
   "hero": {
-    "headline": "Bring Home Something Beautiful",
-    "subheadline": "Handcrafted pieces made by artisans across India — for the home you're building, one intentional object at a time.",
+    "headline": "Bring House Something Beautiful",
+    "subheadline": "Handcrafted pieces made by artisans across India \u2014 for the home you're building, one intentional object at a time.",
     "cta_primary": "Shop Collections",
     "cta_secondary": "Our Story",
     "badge": "Festive Collection Now Live"
   },
   "delivery_banner": {
-    "text": "Free delivery on orders above ₹999  ·  Easy returns  ·  COD available"
+    "text": "Free delivery on orders above \u20b9999  \u00b7  Easy returns  \u00b7  COD available"
   },
   "pdp": {
     "add_to_cart_button": "Add to Bag",
     "out_of_stock": "Sold Out",
-    "delivery_estimate": "Delivered in 5–7 days",
+    "delivery_estimate": "Delivered in 5\u20137 days",
     "return_policy": "30-day returns on all orders",
     "made_in": "Made in India"
   },
@@ -44,7 +44,7 @@
     "festive_home": {
       "name": "Festive Home",
       "tagline": "Light up every celebration",
-      "description": "Diyas, lanterns, and decor pieces made for the season — and every day after it."
+      "description": "Diyas, lanterns, and decor pieces made for the season \u2014 and every day after it."
     },
     "living_spaces": {
       "name": "Living Spaces",
@@ -64,7 +64,7 @@
   },
   "story_section": {
     "headline": "Crafted in India. Made to Last.",
-    "body": "Every piece in the Kiko Living collection is made by hand — by potters in Rajasthan, weavers in Gujarat, metalworkers in Moradabad. We work directly with artisans, which means the craft stays alive and your home gets something real. Not mass-produced. Not imported. Made.",
+    "body": "Every piece in the Kiko Living collection is made by hand \u2014 by potters in Rajasthan, weavers in Gujarat, metalworkers in Moradabad. We work directly with artisans, which means the craft stays alive and your home gets something real. Not mass-produced. Not imported. Made.",
     "cta": "Read Our Story",
     "stat_1_number": "340+",
     "stat_1_label": "Artisan families",
@@ -80,6 +80,6 @@
     "instagram": "Instagram",
     "shipping": "Shipping Policy",
     "privacy": "Privacy Policy",
-    "copyright": "© 2026 Kiko Living. All rights reserved."
+    "copyright": "\u00a9 2026 Kiko Living. All rights reserved."
   }
 }
