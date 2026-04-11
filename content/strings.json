@@ -1,0 +1,85 @@
+{
+  "nav": {
+    "brand_name": "Kiko Living",
+    "collections": "Collections",
+    "catalog": "Catalog",
+    "about": "Our Story",
+    "cart": "Cart"
+  },
+  "hero": {
+    "headline": "Bring Home Something Beautiful",
+    "subheadline": "Handcrafted pieces made by artisans across India — for the home you're building, one intentional object at a time.",
+    "cta_primary": "Shop Collections",
+    "cta_secondary": "Our Story",
+    "badge": "Festive Collection Now Live"
+  },
+  "delivery_banner": {
+    "text": "Free delivery on orders above ₹999  ·  Easy returns  ·  COD available"
+  },
+  "pdp": {
+    "add_to_cart_button": "Add to Bag",
+    "out_of_stock": "Sold Out",
+    "delivery_estimate": "Delivered in 5–7 days",
+    "return_policy": "30-day returns on all orders",
+    "made_in": "Made in India"
+  },
+  "catalog": {
+    "page_title": "Our Collection",
+    "page_subtitle": "Every piece made by hand. Every purchase supports an artisan family.",
+    "filter_all": "All",
+    "sort_label": "Sort by",
+    "empty_state": "No products found in this collection."
+  },
+  "cart": {
+    "checkout_button": "Proceed to Pay",
+    "empty_state": "Your bag is empty",
+    "continue_shopping": "Continue Shopping",
+    "order_summary": "Order Summary",
+    "subtotal": "Subtotal",
+    "delivery": "Delivery",
+    "delivery_free": "Free",
+    "total": "Total"
+  },
+  "collections": {
+    "festive_home": {
+      "name": "Festive Home",
+      "tagline": "Light up every celebration",
+      "description": "Diyas, lanterns, and decor pieces made for the season — and every day after it."
+    },
+    "living_spaces": {
+      "name": "Living Spaces",
+      "tagline": "Where comfort meets craft",
+      "description": "Cushions, wall art, and accent pieces that make a room feel lived-in and loved."
+    },
+    "kitchen_dining": {
+      "name": "Kitchen & Dining",
+      "tagline": "Made for the table you gather around",
+      "description": "Serving ware, storage, and tabletop pieces that make every meal feel special."
+    },
+    "bedroom": {
+      "name": "Bedroom",
+      "tagline": "Rest in something made with care",
+      "description": "Throws, cushions, and bedside pieces for the room that's just for you."
+    }
+  },
+  "story_section": {
+    "headline": "Crafted in India. Made to Last.",
+    "body": "Every piece in the Kiko Living collection is made by hand — by potters in Rajasthan, weavers in Gujarat, metalworkers in Moradabad. We work directly with artisans, which means the craft stays alive and your home gets something real. Not mass-produced. Not imported. Made.",
+    "cta": "Read Our Story",
+    "stat_1_number": "340+",
+    "stat_1_label": "Artisan families",
+    "stat_2_number": "12",
+    "stat_2_label": "States sourced from",
+    "stat_3_number": "4,200+",
+    "stat_3_label": "Homes furnished"
+  },
+  "footer": {
+    "tagline": "Artisanal home decor from across India.",
+    "returns": "Returns & Refunds",
+    "contact": "Contact Us",
+    "instagram": "Instagram",
+    "shipping": "Shipping Policy",
+    "privacy": "Privacy Policy",
+    "copyright": "© 2026 Kiko Living. All rights reserved."
+  }
+}
