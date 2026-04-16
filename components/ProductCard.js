@@ -1,10 +1,14 @@
+import Link from 'next/link'
+import { useCart } from '../context/CartContext'
 import strings from '../content/strings.json'
 
 export default function ProductCard({ product }) {
+  const { addToCart } = useCart()
+
   return (
     <div className="group bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 flex flex-col">
       {/* Image */}
-      <div className="relative overflow-hidden aspect-square bg-stone-100">
+      <Link href={`/product/${product.id}`} className="relative overflow-hidden aspect-square bg-stone-100 block">
         <img
           src={product.image}
           alt={product.name}
@@ -36,16 +40,18 @@ export default function ProductCard({ product }) {
             </span>
           </div>
         )}
-      </div>
+      </Link>
 
       {/* Content */}
       <div className="p-4 flex flex-col flex-1">
         <p className="text-xs text-[#C4702B] font-medium uppercase tracking-wider mb-1">
           {product.collection}
         </p>
-        <h3 className="font-serif text-base font-medium text-[#1A1A1A] mb-1 leading-snug">
-          {product.name}
-        </h3>
+        <Link href={`/product/${product.id}`}>
+          <h3 className="font-serif text-base font-medium text-[#1A1A1A] mb-1 leading-snug hover:text-[#C4702B] transition-colors">
+            {product.name}
+          </h3>
+        </Link>
         <p className="text-xs text-stone-500 line-clamp-2 mb-3 flex-1 leading-relaxed">
           {product.description}
         </p>
@@ -77,7 +83,10 @@ export default function ProductCard({ product }) {
         </div>
 
         {/* CTA */}
-        <button className="w-full bg-[#1A1A1A] hover:bg-[#C4702B] text-white text-sm font-medium py-2.5 rounded-lg transition-colors duration-200">
+        <button
+          onClick={() => addToCart(product, 1)}
+          className="w-full bg-[#1A1A1A] hover:bg-[#C4702B] text-white text-sm font-medium py-2.5 rounded-lg transition-colors duration-200"
+        >
           {strings.pdp.add_to_cart_button}
         </button>
       </div>
