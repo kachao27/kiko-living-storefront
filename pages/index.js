@@ -94,8 +94,7 @@ export default function Home() {
             </span>
 
             <h1 className="relative font-serif text-5xl md:text-6xl lg:text-7xl font-medium leading-[1.05] mb-5">
-              Your favourite<br />
-              <em className="not-italic text-[#FFD9B8]">house</em>
+              {strings.hero.headline}
             </h1>
 
             <p className="relative text-white/75 text-base md:text-lg leading-relaxed mb-6 max-w-sm">
@@ -127,10 +126,10 @@ export default function Home() {
 
             <div className="relative flex flex-wrap gap-3">
               <Link href="/catalog" className="bg-white text-[#C4702B] font-semibold text-sm px-7 py-3.5 rounded-xl hover:bg-[#FAF0E8] transition-colors shadow-lg shadow-black/10">
-                Shop Collections
+                {strings.hero.cta_primary}
               </Link>
               <Link href="#story" className="border border-white/30 bg-white/10 text-white font-medium text-sm px-7 py-3.5 rounded-xl hover:bg-white/20 transition-colors">
-                Our Story
+                {strings.hero.cta_secondary}
               </Link>
             </div>
           </div>
@@ -144,7 +143,7 @@ export default function Home() {
               className="absolute inset-0 w-full h-full object-cover"
             />
             {/* Gradient bleed from left */}
-            <div className="absolute inset-0 bg-gradient-to-r from-[#C4702B] via-[#C4702B]/30 to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-r from-[#C4702B] via-[#C4702B]/60 via-[40%] to-transparent" />
             {/* Dark vignette bottom */}
             <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
 
@@ -159,8 +158,8 @@ export default function Home() {
 
             {/* Stats card */}
             <div className="absolute top-8 right-8 bg-white/95 rounded-2xl px-4 py-3 shadow-xl text-right">
-              <p className="font-serif text-2xl font-semibold text-[#C4702B]">340+</p>
-              <p className="text-xs text-stone-500 mt-0.5">Artisan families</p>
+              <p className="font-serif text-2xl font-semibold text-[#C4702B]">{strings.story_section.stat_1_number}</p>
+              <p className="text-xs text-stone-500 mt-0.5">{strings.story_section.stat_1_label}</p>
             </div>
 
             {/* Ships badge */}
