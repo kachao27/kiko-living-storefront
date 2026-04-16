@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { useRouter } from 'next/router'
 import { useCart } from '../context/CartContext'
 import strings from '../content/strings.json'
@@ -9,7 +9,14 @@ export default function Nav() {
   const [menuOpen, setMenuOpen] = useState(false)
   const [searchOpen, setSearchOpen] = useState(false)
   const [searchQuery, setSearchQuery] = useState('')
+  const [scrolled, setScrolled] = useState(false)
   const router = useRouter()
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 8)
+    window.addEventListener('scroll', onScroll, { passive: true })
+    return () => window.removeEventListener('scroll', onScroll)
+  }, [])
 
   const handleSearch = (e) => {
     e.preventDefault()
@@ -20,7 +27,7 @@ export default function Nav() {
   }
 
   return (
-    <nav className="sticky top-0 z-40 bg-[#FAF7F2] border-b border-stone-200">
+    <nav className={`sticky top-0 z-40 bg-[#FAF7F2] border-b border-stone-200 transition-shadow duration-200 ${scrolled ? 'shadow-md' : ''}`}>
       <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
         <Link href="/" className="font-serif text-xl font-medium text-[#1A1A1A] tracking-wide flex-shrink-0">
           {strings.nav.brand_name}

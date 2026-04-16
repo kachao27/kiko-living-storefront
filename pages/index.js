@@ -7,56 +7,55 @@ import strings from '../content/strings.json'
 
 const TESTIMONIALS = [
   {
-    name: 'Ananya Krishnan',
-    city: 'Bengaluru',
-    rating: 5,
+    name: 'Ananya Krishnan', city: 'Bengaluru', rating: 5,
     text: 'The Brass Diya Set is even more beautiful in person. I could see the slight file marks on each one — you can really tell they were made by hand. Ordered two sets for Diwali, family kept asking where I got them.',
     product: 'Brass Diya Set',
     avatar: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=80&h=80&q=80',
   },
   {
-    name: 'Rohit Mehta',
-    city: 'Mumbai',
-    rating: 5,
-    text: 'Bought the Block Print Indigo Throw for my bedroom. The quality is unreal for the price. The indigo colour has this depth to it that photos don\'t capture. Third purchase from Kiko Living — consistent every time.',
+    name: 'Rohit Mehta', city: 'Mumbai', rating: 5,
+    text: 'Bought the Block Print Indigo Throw for my bedroom. The indigo colour has this depth to it that photos don\'t capture. Third purchase from Kiko Living — consistent every time.',
     product: 'Block Print Indigo Throw',
     avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=80&h=80&q=80',
   },
   {
-    name: 'Shreya Nair',
-    city: 'Chennai',
-    rating: 5,
+    name: 'Shreya Nair', city: 'Chennai', rating: 5,
     text: 'The Ceramic Serving Bowl is my favourite thing in my kitchen right now. The glaze variation at the rim is subtle and lovely. Came really well packed — no damage at all.',
     product: 'Ceramic Serving Bowl',
     avatar: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&w=80&h=80&q=80',
   },
   {
-    name: 'Varun Sharma',
-    city: 'Delhi',
-    rating: 5,
-    text: 'Stone Mortar & Pestle has completely replaced my electric grinder for whole spices. The weight and texture are perfect. Love that I know exactly where it was made and by whom. That matters to me.',
+    name: 'Varun Sharma', city: 'Delhi', rating: 5,
+    text: 'Stone Mortar & Pestle has completely replaced my electric grinder for whole spices. Love that I know exactly where it was made and by whom. That matters to me.',
     product: 'Stone Mortar & Pestle',
     avatar: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=80&h=80&q=80',
   },
   {
-    name: 'Meera Iyer',
-    city: 'Hyderabad',
-    rating: 5,
-    text: 'Gifted the Copper Lantern to my sister for her housewarming. She messaged me at night with a photo of the light patterns it throws on the wall. That photo said everything. Ordering one for myself now.',
+    name: 'Meera Iyer', city: 'Hyderabad', rating: 5,
+    text: 'Gifted the Copper Lantern to my sister for her housewarming. She messaged me at night with a photo of the light patterns it throws on the wall. That photo said everything.',
     product: 'Copper Lantern',
     avatar: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=80&h=80&q=80',
   },
   {
-    name: 'Aditya Joshi',
-    city: 'Pune',
-    rating: 5,
-    text: 'Linen Cushion Cover — bought 4 of them. They\'re on our sofa right now and they look like something from a boutique hotel. My wife who is very particular about these things approved immediately. High praise.',
+    name: 'Aditya Joshi', city: 'Pune', rating: 5,
+    text: 'Linen Cushion Cover — bought 4 of them. They\'re on our sofa right now and they look like something from a boutique hotel. My wife approved immediately. High praise.',
     product: 'Linen Cushion Cover',
     avatar: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=80&h=80&q=80',
   },
 ]
 
 const PRESS = ['YourStory', 'The Hindu', 'Mint Lounge', 'Economic Times', 'India Today', 'Architectural Digest']
+
+const TRUST_ITEMS = [
+  'Free delivery above ₹999',
+  'Easy 30-day returns',
+  'COD available',
+  'Handmade in India',
+  '340+ artisan families',
+  '4.8★ on 3,400+ reviews',
+  'Ships in 24 hours',
+  'Secure payments',
+]
 
 export default function Home() {
   const bestsellers = products.filter(p => p.bestseller).slice(0, 4)
@@ -78,32 +77,33 @@ export default function Home() {
       </div>
 
       {/* ── HERO ─────────────────────────────────────────────── */}
+      {/* Split layout: left = padded text col, right = flush image panel */}
       <section className="relative bg-[#C4702B] text-white overflow-hidden">
-        {/* Subtle depth layers */}
-        <div className="absolute inset-0 pointer-events-none">
-          <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-black/20 to-transparent" />
-          <div className="absolute bottom-0 left-0 w-2/3 h-1/2 bg-gradient-to-t from-black/10 to-transparent" />
-        </div>
+        <div className="max-w-7xl mx-auto grid md:grid-cols-[1fr_420px] lg:grid-cols-[1fr_500px]">
 
-        <div className="relative max-w-7xl mx-auto px-6 py-16 md:py-24 grid md:grid-cols-2 gap-10 items-center">
-          {/* Left — copy */}
-          <div className="z-10">
-            <span className="inline-flex items-center gap-2 bg-white/15 backdrop-blur-sm border border-white/20 text-white text-xs font-medium px-4 py-1.5 rounded-full mb-6 tracking-wider">
+          {/* Left — copy, always determines section height */}
+          <div className="relative z-10 flex flex-col justify-center px-6 py-16 md:py-20 lg:py-24">
+            {/* depth gradients scoped to left col */}
+            <div className="absolute inset-0 pointer-events-none">
+              <div className="absolute bottom-0 left-0 w-full h-1/2 bg-gradient-to-t from-black/10 to-transparent" />
+            </div>
+
+            <span className="relative inline-flex items-center gap-2 bg-white/15 border border-white/20 text-white text-xs font-medium px-4 py-1.5 rounded-full mb-6 tracking-wider w-fit">
               <span className="w-1.5 h-1.5 rounded-full bg-[#FFD700] animate-pulse" />
               {strings.hero.badge}
             </span>
 
-            <h1 className="font-serif text-5xl md:text-6xl lg:text-7xl font-medium leading-[1.05] mb-5">
+            <h1 className="relative font-serif text-5xl md:text-6xl lg:text-7xl font-medium leading-[1.05] mb-5">
               Your favourite<br />
               <em className="not-italic text-[#FFD9B8]">house</em>
             </h1>
 
-            <p className="text-white/75 text-base md:text-lg leading-relaxed mb-6 max-w-sm">
+            <p className="relative text-white/75 text-base md:text-lg leading-relaxed mb-6 max-w-sm">
               {strings.hero.subheadline}
             </p>
 
-            {/* Social proof strip */}
-            <div className="flex items-center gap-3 mb-8">
+            {/* Social proof */}
+            <div className="relative flex items-center gap-3 mb-8">
               <div className="flex -space-x-2">
                 {[
                   'https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=40&h=40&q=80',
@@ -125,85 +125,81 @@ export default function Home() {
               </div>
             </div>
 
-            <div className="flex flex-wrap gap-3">
-              <Link
-                href="/catalog"
-                className="bg-white text-[#C4702B] font-semibold text-sm px-7 py-3.5 rounded-xl hover:bg-[#FAF0E8] transition-colors shadow-lg shadow-black/10"
-              >
+            <div className="relative flex flex-wrap gap-3">
+              <Link href="/catalog" className="bg-white text-[#C4702B] font-semibold text-sm px-7 py-3.5 rounded-xl hover:bg-[#FAF0E8] transition-colors shadow-lg shadow-black/10">
                 Shop Collections
               </Link>
-              <Link
-                href="#story"
-                className="border border-white/30 bg-white/10 backdrop-blur-sm text-white font-medium text-sm px-7 py-3.5 rounded-xl hover:bg-white/20 transition-colors"
-              >
+              <Link href="#story" className="border border-white/30 bg-white/10 text-white font-medium text-sm px-7 py-3.5 rounded-xl hover:bg-white/20 transition-colors">
                 Our Story
               </Link>
             </div>
           </div>
 
-          {/* Right — layered images */}
-          <div className="hidden md:block relative h-[480px]">
-            {/* Main image */}
-            <div className="absolute right-0 top-0 w-[78%] h-full rounded-3xl overflow-hidden shadow-2xl shadow-black/30">
-              <img
-                src="https://images.unsplash.com/photo-1616594039964-ae9021a400a0?auto=format&fit=crop&w=600&h=700&q=80"
-                alt="A beautifully styled home interior"
-                className="w-full h-full object-cover"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
-            </div>
+          {/* Right — flush image panel, matches left column height automatically */}
+          <div className="hidden md:block relative overflow-hidden">
+            {/* Full-bleed main image */}
+            <img
+              src="https://images.unsplash.com/photo-1616594039964-ae9021a400a0?auto=format&fit=crop&w=600&h=900&q=80"
+              alt="Beautifully styled home interior"
+              className="absolute inset-0 w-full h-full object-cover"
+            />
+            {/* Gradient bleed from left */}
+            <div className="absolute inset-0 bg-gradient-to-r from-[#C4702B] via-[#C4702B]/30 to-transparent" />
+            {/* Dark vignette bottom */}
+            <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
 
-            {/* Floating smaller image — bottom left */}
-            <div className="absolute left-0 bottom-10 w-[44%] h-52 rounded-2xl overflow-hidden shadow-2xl shadow-black/30 ring-4 ring-white/20">
+            {/* Floating pottery image */}
+            <div className="absolute bottom-8 left-8 w-32 h-32 rounded-2xl overflow-hidden shadow-2xl ring-4 ring-white/20">
               <img
-                src="https://images.unsplash.com/photo-1565193566173-7a0ee3dbe261?auto=format&fit=crop&w=300&h=250&q=80"
+                src="https://images.unsplash.com/photo-1565193566173-7a0ee3dbe261?auto=format&fit=crop&w=200&h=200&q=80"
                 alt="Handcrafted pottery"
                 className="w-full h-full object-cover"
               />
             </div>
 
-            {/* Stats card — top left */}
-            <div className="absolute left-4 top-6 bg-white/95 backdrop-blur-sm rounded-2xl px-4 py-3 shadow-xl shadow-black/15">
+            {/* Stats card */}
+            <div className="absolute top-8 right-8 bg-white/95 rounded-2xl px-4 py-3 shadow-xl text-right">
               <p className="font-serif text-2xl font-semibold text-[#C4702B]">340+</p>
               <p className="text-xs text-stone-500 mt-0.5">Artisan families</p>
             </div>
 
-            {/* Delivery badge — right bottom */}
-            <div className="absolute right-4 bottom-4 bg-[#1B4332] text-white rounded-xl px-3 py-2 shadow-lg flex items-center gap-2">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+            {/* Ships badge */}
+            <div className="absolute bottom-8 right-8 bg-[#1B4332] text-white rounded-xl px-3 py-2 shadow-lg flex items-center gap-2">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
                 <path d="M5 12h14M12 5l7 7-7 7"/>
               </svg>
               <span className="text-xs font-medium">Ships in 24 hrs</span>
             </div>
           </div>
         </div>
-
-        {/* Bottom fade */}
-        <div className="absolute bottom-0 left-0 right-0 h-8 bg-gradient-to-t from-[#FAF7F2]/20 to-transparent" />
       </section>
 
-      {/* ── TRUST / MARQUEE STRIP ────────────────────────────── */}
+      {/* ── TRUST MARQUEE ────────────────────────────────────── */}
       <div className="bg-[#1A1A1A] text-white py-3 overflow-hidden">
-        <div className="flex gap-12 animate-none whitespace-nowrap px-6">
-          {['Free delivery above ₹999', 'Easy 30-day returns', 'COD available', 'Handmade in India', '340+ artisan families', '4.8★ on 3,400+ reviews', 'Ships in 24 hours'].map((item, i) => (
-            <span key={i} className="text-xs font-medium tracking-wide text-white/70 flex items-center gap-3">
-              <span className="w-1 h-1 rounded-full bg-[#C4702B] flex-shrink-0" />
-              {item}
-            </span>
+        {/* Items duplicated for seamless loop */}
+        <div className="flex animate-marquee">
+          {[0, 1].map(set => (
+            <div key={set} className="flex flex-shrink-0 gap-0">
+              {TRUST_ITEMS.map((item, i) => (
+                <span key={i} className="text-xs font-medium tracking-wide text-white/70 flex items-center gap-3 px-6 whitespace-nowrap">
+                  <span className="w-1 h-1 rounded-full bg-[#C4702B] flex-shrink-0" />
+                  {item}
+                </span>
+              ))}
+            </div>
           ))}
         </div>
       </div>
 
       {/* ── PRESS BAR ────────────────────────────────────────── */}
-      <section className="bg-white border-b border-stone-100 py-8">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="flex flex-col md:flex-row items-center gap-6 md:gap-12">
-            <p className="text-xs text-stone-400 uppercase tracking-widest whitespace-nowrap font-medium">As featured in</p>
-            <div className="flex flex-wrap items-center justify-center md:justify-start gap-8">
-              {PRESS.map(name => (
-                <span key={name} className="text-stone-300 font-semibold text-sm tracking-wide uppercase">{name}</span>
-              ))}
-            </div>
+      <section className="bg-white border-b border-stone-100 py-7">
+        <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center gap-5 md:gap-12">
+          <p className="text-xs text-stone-400 uppercase tracking-widest font-medium whitespace-nowrap">As featured in</p>
+          <div className="w-px h-5 bg-stone-200 hidden md:block" />
+          <div className="flex flex-wrap items-center justify-center md:justify-start gap-8">
+            {PRESS.map(name => (
+              <span key={name} className="text-stone-300 font-bold text-sm tracking-wider uppercase select-none">{name}</span>
+            ))}
           </div>
         </div>
       </section>
@@ -215,34 +211,21 @@ export default function Home() {
             <p className="text-xs text-[#C4702B] uppercase tracking-widest font-medium mb-2">Browse by</p>
             <h2 className="font-serif text-4xl font-medium text-[#1A1A1A]">Collections</h2>
           </div>
-          <Link href="/catalog" className="text-sm text-stone-500 hover:text-[#C4702B] transition-colors hidden md:block">
-            View all →
-          </Link>
+          <Link href="/catalog" className="text-sm text-stone-500 hover:text-[#C4702B] transition-colors hidden md:block">View all →</Link>
         </div>
-
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-          {collections.map((col, i) => (
-            <Link
-              key={col.id}
-              href={`/catalog?collection=${col.id}`}
-              className="group relative rounded-2xl overflow-hidden bg-stone-200"
-              style={{ aspectRatio: i === 0 ? '3/4' : '3/4' }}
-            >
-              <img
-                src={col.image}
-                alt={col.name}
-                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-                style={{ aspectRatio: '3/4' }}
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/65 via-black/10 to-transparent"/>
+          {collections.map(col => (
+            <Link key={col.id} href={`/catalog?collection=${col.id}`}
+              className="group relative rounded-2xl overflow-hidden aspect-[3/4] bg-stone-200 block">
+              <img src={col.image} alt={col.name}
+                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/65 via-black/10 to-transparent" />
               <div className="absolute bottom-0 left-0 p-5">
-                <h3 className="font-serif text-white font-medium text-lg leading-snug">
-                  {col.name}
-                </h3>
+                <h3 className="font-serif text-white font-medium text-lg leading-snug">{col.name}</h3>
                 <p className="text-white/65 text-xs mt-1">{col.tagline}</p>
               </div>
-              <div className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity">
-                <div className="bg-white/20 backdrop-blur-sm rounded-full p-2">
+              <div className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-200">
+                <div className="bg-white/20 rounded-full p-2">
                   <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2">
                     <path d="M5 12h14M12 5l7 7-7 7"/>
                   </svg>
@@ -261,14 +244,10 @@ export default function Home() {
               <p className="text-xs text-[#C4702B] uppercase tracking-widest font-medium mb-2">Most loved</p>
               <h2 className="font-serif text-4xl font-medium text-[#1A1A1A]">Bestsellers</h2>
             </div>
-            <Link href="/catalog" className="text-sm text-stone-500 hover:text-[#C4702B] transition-colors hidden md:block">
-              View all →
-            </Link>
+            <Link href="/catalog" className="text-sm text-stone-500 hover:text-[#C4702B] transition-colors hidden md:block">View all →</Link>
           </div>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-5">
-            {bestsellers.map(product => (
-              <ProductCard key={product.id} product={product} />
-            ))}
+            {bestsellers.map(product => <ProductCard key={product.id} product={product} />)}
           </div>
         </div>
       </section>
@@ -276,25 +255,20 @@ export default function Home() {
       {/* ── STORY ────────────────────────────────────────────── */}
       <section id="story" className="max-w-7xl mx-auto px-6 py-24">
         <div className="grid md:grid-cols-2 gap-16 items-center">
-          <div className="relative">
+          {/* Images — extra bottom padding so floating card doesn't bleed into next section */}
+          <div className="relative pb-10">
             <div className="grid grid-cols-2 gap-4">
               <div className="rounded-2xl overflow-hidden aspect-square">
-                <img
-                  src="https://images.unsplash.com/photo-1558769132-cb1aea458c5e?auto=format&fit=crop&w=500&h=500&q=80"
-                  alt="Handwoven textiles"
-                  className="w-full h-full object-cover"
-                />
+                <img src="https://images.unsplash.com/photo-1558769132-cb1aea458c5e?auto=format&fit=crop&w=500&h=500&q=80"
+                  alt="Handwoven textiles" className="w-full h-full object-cover" />
               </div>
               <div className="rounded-2xl overflow-hidden aspect-square mt-10">
-                <img
-                  src="https://images.unsplash.com/photo-1565193566173-7a0ee3dbe261?auto=format&fit=crop&w=500&h=500&q=80"
-                  alt="Artisan pottery"
-                  className="w-full h-full object-cover"
-                />
+                <img src="https://images.unsplash.com/photo-1565193566173-7a0ee3dbe261?auto=format&fit=crop&w=500&h=500&q=80"
+                  alt="Artisan pottery" className="w-full h-full object-cover" />
               </div>
             </div>
-            {/* Floating impact card */}
-            <div className="absolute -bottom-4 left-1/2 -translate-x-1/2 bg-[#C4702B] text-white rounded-2xl px-6 py-4 shadow-xl whitespace-nowrap">
+            {/* Floating impact card — inside pb-10 so it doesn't clip next section */}
+            <div className="absolute bottom-0 left-1/2 -translate-x-1/2 bg-[#C4702B] text-white rounded-2xl px-6 py-4 shadow-xl whitespace-nowrap z-10">
               <p className="font-serif text-2xl font-semibold">12 states</p>
               <p className="text-white/75 text-xs mt-0.5">Artisans sourced from across India</p>
             </div>
@@ -305,29 +279,21 @@ export default function Home() {
             <h2 className="font-serif text-4xl md:text-5xl font-medium text-[#1A1A1A] leading-tight mb-6">
               {strings.story_section.headline}
             </h2>
-            <p className="text-stone-500 leading-relaxed mb-8 text-base">
-              {strings.story_section.body}
-            </p>
-
+            <p className="text-stone-500 leading-relaxed mb-8 text-base">{strings.story_section.body}</p>
             <div className="grid grid-cols-3 gap-6 mb-8 py-8 border-y border-stone-200">
-              <div>
-                <p className="font-serif text-3xl font-medium text-[#C4702B]">{strings.story_section.stat_1_number}</p>
-                <p className="text-xs text-stone-500 mt-1 leading-snug">{strings.story_section.stat_1_label}</p>
-              </div>
-              <div>
-                <p className="font-serif text-3xl font-medium text-[#C4702B]">{strings.story_section.stat_2_number}</p>
-                <p className="text-xs text-stone-500 mt-1 leading-snug">{strings.story_section.stat_2_label}</p>
-              </div>
-              <div>
-                <p className="font-serif text-3xl font-medium text-[#C4702B]">{strings.story_section.stat_3_number}</p>
-                <p className="text-xs text-stone-500 mt-1 leading-snug">{strings.story_section.stat_3_label}</p>
-              </div>
+              {[
+                [strings.story_section.stat_1_number, strings.story_section.stat_1_label],
+                [strings.story_section.stat_2_number, strings.story_section.stat_2_label],
+                [strings.story_section.stat_3_number, strings.story_section.stat_3_label],
+              ].map(([n, l]) => (
+                <div key={l}>
+                  <p className="font-serif text-3xl font-medium text-[#C4702B]">{n}</p>
+                  <p className="text-xs text-stone-500 mt-1 leading-snug">{l}</p>
+                </div>
+              ))}
             </div>
-
-            <Link
-              href="/catalog"
-              className="inline-flex items-center gap-2 bg-[#1A1A1A] text-white text-sm font-medium px-7 py-3.5 rounded-xl hover:bg-[#C4702B] transition-colors"
-            >
+            <Link href="/catalog"
+              className="inline-flex items-center gap-2 bg-[#1A1A1A] text-white text-sm font-medium px-7 py-3.5 rounded-xl hover:bg-[#C4702B] transition-colors">
               Explore the collection →
             </Link>
           </div>
@@ -342,14 +308,10 @@ export default function Home() {
               <p className="text-xs text-[#C4702B] uppercase tracking-widest font-medium mb-2">Just arrived</p>
               <h2 className="font-serif text-4xl font-medium text-[#1A1A1A]">New in</h2>
             </div>
-            <Link href="/catalog" className="text-sm text-stone-500 hover:text-[#C4702B] transition-colors hidden md:block">
-              View all →
-            </Link>
+            <Link href="/catalog" className="text-sm text-stone-500 hover:text-[#C4702B] transition-colors hidden md:block">View all →</Link>
           </div>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-5">
-            {newIn.map(product => (
-              <ProductCard key={product.id} product={product} />
-            ))}
+            {newIn.map(product => <ProductCard key={product.id} product={product} />)}
           </div>
         </div>
       </section>
@@ -369,7 +331,6 @@ export default function Home() {
               <span className="text-sm text-stone-500 ml-2">4.8 average · 3,400+ reviews</span>
             </div>
           </div>
-
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {TESTIMONIALS.map((t, i) => (
               <div key={i} className="bg-[#FAF7F2] rounded-2xl p-6 flex flex-col">
@@ -382,11 +343,7 @@ export default function Home() {
                 </div>
                 <p className="text-stone-600 text-sm leading-relaxed flex-1 mb-5">"{t.text}"</p>
                 <div className="flex items-center gap-3 pt-4 border-t border-stone-200">
-                  <img
-                    src={t.avatar}
-                    alt={t.name}
-                    className="w-10 h-10 rounded-full object-cover"
-                  />
+                  <img src={t.avatar} alt={t.name} className="w-10 h-10 rounded-full object-cover flex-shrink-0" />
                   <div>
                     <p className="text-sm font-semibold text-[#1A1A1A]">{t.name}</p>
                     <p className="text-xs text-stone-400 mt-0.5">{t.city} · {t.product}</p>
@@ -410,7 +367,8 @@ export default function Home() {
                   className="w-9 h-9 rounded-lg bg-white/10 hover:bg-[#C4702B] flex items-center justify-center transition-colors">
                   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
                     <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
-                    <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+                    <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/>
+                    <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
                   </svg>
                 </a>
               </div>
