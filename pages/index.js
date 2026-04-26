@@ -88,16 +88,11 @@ export default function Home() {
               <div className="absolute bottom-0 left-0 w-full h-1/2 bg-gradient-to-t from-black/10 to-transparent" />
             </div>
 
-            <span className="relative inline-flex items-center gap-2 bg-white/15 border border-white/20 text-white text-xs font-medium px-4 py-1.5 rounded-full mb-6 tracking-wider w-fit">
-              <span className="w-1.5 h-1.5 rounded-full bg-[#FFD700] animate-pulse" />
-              {strings.hero.badge}
-            </span>
-
-            <h1 className="relative font-serif text-5xl md:text-6xl lg:text-7xl font-medium leading-[1.05] mb-5">
+            <h1 className="relative font-serif text-6xl md:text-7xl lg:text-8xl font-medium leading-[1.05] mb-6">
               {strings.hero.headline}
             </h1>
 
-            <p className="relative text-white/75 text-base md:text-lg leading-relaxed mb-6 max-w-sm">
+            <p className="relative text-white/75 text-lg md:text-xl leading-relaxed mb-8 max-w-md">
               {strings.hero.subheadline}
             </p>
 
